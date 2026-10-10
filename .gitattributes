@@ -1,0 +1,9 @@
+# Normaliza los finales de línea (evita avisos CRLF/LF en Windows)
+* text=auto eol=lf
+
+# Archivos binarios
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.pptx binary
+*.zip binary

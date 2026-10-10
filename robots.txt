@@ -1,0 +1,5 @@
+# robots.txt - Susana Rodríguez | Mary Kay Colombia
+User-agent: *
+Allow: /
+
+Sitemap: https://susanarodriguez.club/sitemap.xml

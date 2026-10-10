@@ -1,0 +1,9 @@
+# Temporales del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Respaldos y empaquetados
+*.zip
+*.bak
+scratch/

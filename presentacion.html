@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentación Ejecutiva de Bienestar | Susana Rodríguez Mary Kay (Medellín & Bogotá)</title>
+  <meta name="description" content="Diapositivas de la propuesta de bienestar laboral y cuidado facial Mary Kay para empresas en Medellín, Bogotá y Colombia, por Susana Rodríguez.">
+  <link rel="canonical" href="https://susanarodriguez.club/presentacion.html">
+
+  <!-- Geo Tags & SEO Local (Medellín, Antioquia, Colombia) -->
+  <meta name="geo.region" content="CO-ANT" />
+  <meta name="geo.placename" content="Medellín, Antioquia, Colombia" />
+  <meta name="geo.position" content="6.2442;-75.5812" />
+  <meta name="ICBM" content="6.2442, -75.5812" />
+
+  <!-- Open Graph / Redes Sociales (WhatsApp & Social Media Preview Cards) -->
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Presentación Ejecutiva de Bienestar | Mary Kay Colombia" />
+  <meta property="og:description" content="Diapositivas interactivas de propuestas de bienestar laboral para empresas en Medellín y Bogotá." />
+  <meta property="og:url" content="https://susanarodriguez.club/presentacion.html" />
+  <meta property="og:image" content="https://susanarodriguez.club/assets/skincare-executive.jpg" />
+  <meta property="og:image:secure_url" content="https://susanarodriguez.club/assets/skincare-executive.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="670" />
+
+  <!-- Twitter Card (Tarjeta de Previsualización) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Presentación Ejecutiva de Bienestar | Mary Kay Colombia" />
+  <meta name="twitter:description" content="Diapositivas interactivas de bienestar laboral Mary Kay." />
+  <meta name="twitter:image" content="https://susanarodriguez.club/assets/skincare-executive.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=3.1">
+
+  <style>
+    /* PRESENTATION DECK STYLES */
+    body.presentation-mode {
+      background-color: #2D0C17;
+      color: #FFF7F9;
+      font-family: var(--font-sans);
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      user-select: none;
+    }
+
+    .deck-top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 54px;
+      background: rgba(45, 12, 23, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+      border-bottom: 1px solid rgba(234, 108, 141, 0.2);
+    }
+
+    .deck-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .deck-progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: var(--primary-rose);
+      transition: width 0.3s ease;
+    }
+
+    .deck-controls-top {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .deck-btn {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFF7F9;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--border-radius-pill);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .deck-btn:hover {
+      background: var(--primary-rose);
+      border-color: var(--primary-rose);
+      color: #FFFFFF;
+    }
+
+    /* SLIDE STAGE */
+    .deck-stage {
+      position: fixed;
+      top: 54px;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1200px;
+      height: 100%;
+      max-height: 680px;
+      background: #FFF7F9;
+      color: #3B121E;
+      border-radius: var(--border-radius-lg);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+      padding: 3rem;
+      overflow-y: auto;
+      position: relative;
+      animation: slideFadeIn 0.4s ease;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    @keyframes slideFadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* BOTTOM CONTROLS */
+    .deck-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: rgba(45, 12, 23, 0.95);
+      border-top: 1px solid rgba(234, 108, 141, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      z-index: 2000;
+    }
+
+    .slide-counter {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--bg-pink-accent);
+    }
+
+    .nav-arrow-btns {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .arrow-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-fast);
+    }
+
+    .arrow-btn:hover {
+      background: var(--primary-rose);
+      transform: scale(1.1);
+    }
+
+    /* SLIDE COVER DESIGN */
+    .slide-cover {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+    }
+
+    .slide-cover h1 {
+      font-family: var(--font-serif);
+      font-size: 3.8rem;
+      color: var(--dark-plum);
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+    }
+
+    .slide-cover h2 {
+      font-size: 1.6rem;
+      color: var(--primary-rose);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .slide-cover-presenter {
+      background: var(--bg-soft-pink);
+      padding: 1rem 2.5rem;
+      border-radius: var(--border-radius-pill);
+      border: 1px solid rgba(234, 108, 141, 0.3);
+      font-size: 1.1rem;
+      color: var(--dark-plum);
+    }
+
+    .slide-header-deck {
+      margin-bottom: 2rem;
+    }
+
+    .slide-header-deck h2 {
+      font-family: var(--font-serif);
+      font-size: 2.6rem;
+      color: var(--dark-plum);
+      line-height: 1.1;
+    }
+
+    .slide-header-deck p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== OPTIMIZACIÓN RESPONSIVE (TABLETA / MÓVIL) ===== */
+    @media (max-width: 1024px) {
+      .slide { padding: 2rem; }
+      .slide-cover h1 { font-size: 3rem; }
+      .slide-header-deck h2 { font-size: 2.1rem; }
+    }
+
+    @media (max-width: 768px) {
+      .deck-top-bar { padding: 0 0.7rem; }
+      .deck-btn { padding: 0.55rem 0.7rem; font-size: 0.78rem; }
+      .deck-btn-text { display: none; }
+      .deck-btn i { font-size: 1rem; }
+
+      .deck-stage { padding: 0.6rem; }
+      .slide { padding: 1.3rem 1rem; border-radius: var(--border-radius-md); }
+      .slide-cover h1 { font-size: 2.2rem; }
+      .slide-cover h2 { font-size: 1.15rem; }
+      .slide-cover-presenter { padding: 0.8rem 1.2rem; font-size: 0.95rem; }
+      .slide-header-deck { margin-bottom: 1.2rem; }
+      .slide-header-deck h2 { font-size: 1.7rem; }
+      .slide-header-deck p { font-size: 0.98rem; }
+
+      .deck-bottom-bar { height: 54px; padding: 0 0.9rem; }
+      .slide-counter { font-size: 0.82rem; }
+      .arrow-btn { width: 40px; height: 40px; font-size: 1rem; }
+
+      /* Contenido con estilos en línea dentro de las diapositivas */
+      #slide-4 .f-badge { font-size: 0.85rem !important; padding: 0.55rem 0.9rem !important; }
+      #slide-5 .profile-bio > div { font-size: 2.2rem !important; }
+      #slide-5 .profile-bio p { font-size: 1rem !important; }
+      #slide-7 .hr-benefits-grid { grid-template-columns: 1fr !important; }
+      #slide-10 .calculator-card > p { font-size: 1.05rem !important; }
+      #slide-10 .step-list { font-size: 0.95rem !important; }
+      #slide-10 .badge-pill { font-size: 0.82rem !important; padding: 0.6rem 1rem !important; }
+      #slide-12 h2 { font-size: 1.6rem !important; }
+      #slide-12 .monogram-badge { width: 52px !important; height: 52px !important; }
+      #slide-12 .monogram-letters { font-size: 1.3rem !important; }
+    }
+
+    @media (max-width: 400px) {
+      .slide { padding: 1rem 0.8rem; }
+      .slide-cover h1 { font-size: 1.85rem; }
+      .slide-header-deck h2 { font-size: 1.5rem; }
+      .slide-cover-presenter { font-size: 0.82rem; }
+      .deck-bottom-bar { padding: 0 0.6rem; }
+    }
+  </style>
+</head>
+<body class="presentation-mode">
+
+  <!-- DECK TOP BAR WITH EXCLUSIVE MONOGRAM LOGO ONLY -->
+  <div class="deck-top-bar">
+    <div class="deck-brand">
+      <div class="monogram-badge" style="width:42px; height:42px; flex-shrink:0;">
+        <div class="badge-ring"></div>
+        <span class="monogram-letters" style="font-size:1.35rem;">SR</span>
+        <span class="badge-sparkle-dot">✦</span>
+      </div>
+    </div>
+
+    <div class="deck-controls-top">
+      <a href="dosier-empresarial.html" class="deck-btn" title="Volver al Dosier Web" aria-label="Volver al Dosier Web">
+        <i class="fa-solid fa-globe"></i> <span class="deck-btn-text">Dosier Web</span>
+      </a>
+      <a href="Propuesta_Bienestar_MaryKay_SusanaRodriguez.pptx" download class="deck-btn text-rose" title="Descargar PowerPoint (.pptx)" aria-label="Descargar PowerPoint">
+        <i class="fa-solid fa-file-powerpoint"></i> <span class="deck-btn-text">Descargar .PPTX</span>
+      </a>
+      <button onclick="toggleFullscreen()" class="deck-btn" id="fullScreenBtn" title="Pantalla Completa" aria-label="Pantalla completa">
+        <i class="fa-solid fa-expand"></i> <span class="deck-btn-text">Pantalla Completa</span>
+      </button>
+    </div>
+
+    <div class="deck-progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- DECK STAGE / SLIDES -->
+  <div class="deck-stage">
+    
+    <!-- SLIDE 1: PORTADA -->
+    <div class="slide active" id="slide-1">
+      <div class="slide-cover">
+        <div class="monogram-badge mb-3" style="width:90px; height:90px;">
+          <div class="badge-ring"></div>
+          <span class="monogram-letters" style="font-size:2.2rem;">SR</span>
+          <span class="badge-sparkle-dot">✦</span>
+        </div>
+        <h1>Propuesta de Bienestar</h1>
+        <h2>MARY KAY® COLOMBIA</h2>
+        <div class="slide-cover-presenter">
+          <strong>By Susana Rodríguez</strong><br>
+          <span style="font-size: 0.95rem; color: var(--text-muted);">Consultora de Belleza Mary Kay Colombia</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: MARCA LÍDER -->
+    <div class="slide" id="slide-2">
+      <div class="slide-header-deck">
+        <span class="sub-title"><i class="fa-solid fa-trophy"></i> Trayectoria Internacional</span>
+        <h2>MARCA LÍDER GLOBAL</h2>
+        <p>Más de 61 años de experiencia en el cuidado de la piel, maquillaje profesional y fragancias.</p>
+      </div>
+
+      <div class="brand-stats-grid mt-4">
+        <div class="brand-stat-card glass-card">
+          <div class="brand-stat-icon"><i class="fa-solid fa-award"></i></div>
+          <h3>Marca #1</h3>
+          <p>Reconocida por 3 años consecutivos como la marca #1 de belleza y cuidado facial en el mundo.</p>
+        </div>
+        <div class="brand-stat-card glass-card">
+          <div class="brand-stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <h3>Dallas, Texas</h3>
+          <p>Fundada en Estados Unidos con los más altos estándares internacionales de calidad y tecnología.</p>
+        </div>
+        <div class="brand-stat-card glass-card">
+          <div class="brand-stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Alta Cosmética</h3>
+          <p>Soluciones probadas dermatológicamente que actúan en las capas superficiales y profundas.</p>
+        </div>
+        <div class="brand-stat-card glass-card">
+          <div class="brand-stat-icon"><i class="fa-solid fa-building-user"></i></div>
+          <h3>Bienestar In Situ</h3>
+          <p>Experiencias prácticas guiadas para transformar el clima laboral de tu empresa.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: RESPALDO CIENTÍFICO Y PATENTES -->
+    <div class="slide" id="slide-3">
+      <div class="slide-header-deck">
+        <span class="sub-title"><i class="fa-solid fa-microscope"></i> Rigor e Investigación</span>
+        <h2>Top 5 Mundial & Patentes Registradas</h2>
+      </div>
+
+      <div class="enfoque-grid mt-4">
+        <div class="enfoque-card glass-card">
+          <h3 class="text-rose mb-3"><i class="fa-solid fa-star"></i> Top 5 a Nivel Mundial</h3>
+          <p>Mary Kay® es reconocida globalmente como una de las cinco mejores marcas de cuidado de la piel en todo el planeta.</p>
+          
+          <h3 class="text-rose mb-3 mt-4"><i class="fa-solid fa-brain"></i> Conciencia del Cuidado</h3>
+          <p>Fomentamos sesiones prácticas que enseñan cómo cuidar la piel adecuadamente, promoviendo el autocuidado diario.</p>
+        </div>
+
+        <div class="enfoque-card glass-card highlight-enfoque">
+          <h3 style="color: var(--dark-plum);"><i class="fa-solid fa-certificate"></i> Más de 1.200 Patentes</h3>
+          <p>Mary Kay invierte millones de dólares anualmente en investigación y pruebas científicas para garantizar resultados excepcionales en cada fórmula.</p>
+          <div class="stats-banner mt-4" style="padding: 1rem; border-radius: 12px;">
+            <div class="stat-item">
+              <span class="stat-number">+1.200</span>
+              <span class="stat-text">Patentes mundiales activas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: CARACTERÍSTICAS DE NUESTROS PRODUCTOS -->
+    <div class="slide" id="slide-4">
+      <div class="slide-header-deck">
+        <span class="sub-title"><i class="fa-solid fa-sparkles"></i> Calidad Superior</span>
+        <h2>Características de Nuestros Productos</h2>
+      </div>
+
+      <div class="product-features-box glass-card">
+        <div class="features-pill-list" style="gap: 1.2rem;">
+          <span class="f-badge" style="font-size: 1.1rem; padding: 0.9rem 1.6rem;"><i class="fa-solid fa-user-check"></i> Dermatológicamente Probados e Hipoalergénicos</span>
+          <span class="f-badge" style="font-size: 1.1rem; padding: 0.9rem 1.6rem;"><i class="fa-solid fa-droplet-slash"></i> No Comedogénicos (Libres de Aceite)</span>
+          <span class="f-badge" style="font-size: 1.1rem; padding: 0.9rem 1.6rem;"><i class="fa-solid fa-bolt"></i> Fórmulas Altamente Concentradas</span>
+          <span class="f-badge" style="font-size: 1.1rem; padding: 0.9rem 1.6rem;"><i class="fa-solid fa-layer-group"></i> Alta Cosmética: Capas Superficiales y Profundas</span>
+          <span class="f-badge" style="font-size: 1.1rem; padding: 0.9rem 1.6rem;"><i class="fa-solid fa-ban"></i> Sin Fragancias Artificiales (Todo Tipo de Piel)</span>
+          <span class="f-badge" style="font-size: 1.1rem; padding: 0.9rem 1.6rem;"><i class="fa-solid fa-atom"></i> Innovación Respaldada por Ciencia y Tecnología</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: RESPONSABILIDAD SOCIAL -->
+    <div class="slide" id="slide-5">
+      <div class="slide-header-deck text-center">
+        <span class="sub-title"><i class="fa-solid fa-heart-circle-check"></i> Ética y Medio Ambiente</span>
+        <h2>Nuestra Responsabilidad Social</h2>
+      </div>
+
+      <div class="consultant-profile-card glass-card" style="grid-template-columns: 1fr; text-align: center;">
+        <div class="profile-bio">
+          <div style="font-size: 3.5rem; color: var(--primary-rose);" class="mb-3"><i class="fa-solid fa-paw"></i></div>
+          <h2 style="color: var(--dark-plum);">Mary Kay NO Pruebas en Animales</h2>
+          <p style="font-size: 1.25rem; max-width: 800px; margin: 1rem auto; color: var(--text-dark);">
+            Somos pioneros en la investigación de pruebas alternativas seguras utilizando nuestro propio laboratorio <strong>In-Vitro</strong>.<br><br>
+            Reconocidos internacionalmente como líderes globales en innovación ética dentro de la industria cosmética mundial.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: IMPORTANCIA DEL CUIDADO DE LA PIEL -->
+    <div class="slide" id="slide-6">
+      <div class="slide-header-deck">
+        <span class="sub-title"><i class="fa-solid fa-shield-cat"></i> Diagnóstico Cutáneo</span>
+        <h2>¿Sabías que el 80% de los Signos de la Edad son Causados por Factores Externos?</h2>
+        <p>A partir de los 20 años, la piel reduce la producción de componentes esenciales para mantenerse joven.</p>
+      </div>
+
+      <div class="stress-factors-grid mt-4">
+        <div class="stress-card">
+          <div class="stress-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h3>Productos Inadecuados</h3>
+          <p>Uso de productos no acordes al tipo específico de piel de cada persona.</p>
+        </div>
+        <div class="stress-card">
+          <div class="stress-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+          <h3>Falta de Rutina</h3>
+          <p>Ausencia de una rutina básica diaria de limpieza, hidratación y protección.</p>
+        </div>
+        <div class="stress-card">
+          <div class="stress-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+          <h3>Falsa Creencia</h3>
+          <p>La idea errónea de que cuidarse la piel es algo muy costoso o complicado.</p>
+        </div>
+        <div class="stress-card">
+          <div class="stress-icon"><i class="fa-solid fa-laptop"></i></div>
+          <h3>Agresores de Oficina</h3>
+          <p>Aire acondicionado continuo, estrés de trabajo y luz azul de pantallas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: NUESTRO ENFOQUE & BENEFICIOS -->
+    <div class="slide" id="slide-7">
+      <div class="slide-header-deck">
+        <span class="sub-title"><i class="fa-solid fa-bullseye"></i> Propuesta de Valor</span>
+        <h2>Nuestro Enfoque: Soluciones Efectivas y Personalizadas</h2>
+        <p>Promovemos bienestar laboral a través de tres pilares fundamentales:</p>
+      </div>
+
+      <div class="hr-benefits-grid mt-4" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="hr-benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+          <h3>Imagen Personal</h3>
+          <p>Aumenta la autoconfianza, la autoestima y la proyección profesional ante clientes y equipos.</p>
+        </div>
+        <div class="hr-benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-users"></i></div>
+          <h3>Comportamiento</h3>
+          <p>Mejora las relaciones interpersonales, la integración laboral y un ambiente de trabajo positivo.</p>
+        </div>
+        <div class="hr-benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Conocimiento</h3>
+          <p>Empodera al colaborador a través de herramientas y hábitos de autocuidado práctico para toda la vida.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: REQUISITOS BÁSICOS & TALLERES -->
+    <div class="slide" id="slide-8">
+      <div class="slide-header-deck">
+        <span class="sub-title"><i class="fa-solid fa-handshake-simple"></i> Organización Sencilla</span>
+        <h2>Requisitos Básicos y Talleres Empresariales</h2>
+      </div>
+
+      <div class="requisitos-grid">
+        <div class="req-info">
+          <h3><i class="fa-solid fa-building"></i> La Empresa Únicamente Aporta:</h3>
+          <ul>
+            <li><i class="fa-solid fa-check text-green"></i> Espacio cómodo para interactuar (sala de juntas, auditorio o descanso).</li>
+            <li><i class="fa-solid fa-check text-green"></i> Equipos de <strong>5 a 8 colaboradores por sesión</strong> (30 a 40 minutos).</li>
+            <li><i class="fa-solid fa-check text-green"></i> Acceso cercano a un punto de agua para demostraciones prácticas.</li>
+          </ul>
+        </div>
+        <div class="req-cta text-center">
+          <span class="req-highlight">$0 Costo Empresa</span>
+          <p>Susana Rodríguez proporciona 100% de espejos, manteles, insumos y limpiadoras Mary Kay®.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: LAS 3 PROPUESTAS -->
+    <div class="slide" id="slide-9">
+      <div class="slide-header-deck">
+        <span class="sub-title"><i class="fa-solid fa-layer-group"></i> Opciones de Presentación</span>
+        <h2>Nuestras 3 Propuestas Empresariales</h2>
+      </div>
+
+      <div class="propuestas-cards-grid mt-3">
+        <div class="propuesta-card glass-card">
+          <div class="prop-number">1</div>
+          <h3>Propuesta Empresarial</h3>
+          <p>Sesiones personalizadas de cuidado facial, corporal, maquillaje y fragancias en grupos reducidos de 5 a 8 personas.</p>
+        </div>
+        <div class="propuesta-card glass-card">
+          <div class="prop-number">2</div>
+          <h3>Propuesta Comercial</h3>
+          <p>Kits de regalo corporativo diseñados y adaptados al presupuesto de tu empresa para fechas especiales.</p>
+        </div>
+        <div class="propuesta-card glass-card">
+          <div class="prop-number">3</div>
+          <h3>Propuesta de Exhibición</h3>
+          <p>Stands interactivos y Skin Bar de experiencia para que los colaboradores prueben los productos en días de salud.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 10: NUESTRO OBJETIVO -->
+    <div class="slide" id="slide-10">
+      <div class="slide-header-deck text-center">
+        <span class="sub-title"><i class="fa-solid fa-flag-checkered"></i> Meta Principal</span>
+        <h2>Nuestro Objetivo Corporativo</h2>
+      </div>
+
+      <div class="calculator-card glass-card text-center" style="max-width: 900px;">
+        <p style="font-size: 1.4rem; color: var(--dark-plum); font-weight: 700;" class="mb-4">
+          Crear un espacio de bienestar laboral donde tus colaboradores puedan:
+        </p>
+        <div class="step-list" style="text-align: left; font-size: 1.15rem; max-width: 700px; margin: 0 auto;">
+          <p><i class="fa-solid fa-star text-rose"></i> Aprender a cuidar su piel con los mejores productos dermo-cosméticos.</p>
+          <p><i class="fa-solid fa-star text-rose"></i> Potenciar su imagen personal y actitud profesional.</p>
+          <p><i class="fa-solid fa-star text-rose"></i> Vivir una experiencia única que fomente la productividad y el autocuidado.</p>
+        </div>
+        <div class="badge-pill mt-4" style="font-size: 1.1rem; padding: 0.8rem 2rem;">
+          Llevamos el bienestar y la excelencia de Mary Kay hasta tu empresa sin ningún costo adicional.
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 11: GALERÍA Y CLIENTES -->
+    <div class="slide" id="slide-11">
+      <div class="slide-header-deck">
+        <span class="sub-title"><i class="fa-solid fa-building-circle-check"></i> Experiencia y Confianza</span>
+        <h2>Clientes que Han Confiado en la Marca</h2>
+      </div>
+
+      <div class="clients-logo-grid mt-3">
+        <div class="client-badge">Estelar Hoteles</div>
+        <div class="client-badge">Hotel Las Américas</div>
+        <div class="client-badge">UNIMINUTO</div>
+        <div class="client-badge">Fundación Cardioinfantil</div>
+        <div class="client-badge">Banco de Bogotá</div>
+        <div class="client-badge">Magic</div>
+        <div class="client-badge">Nails LS</div>
+        <div class="client-badge">NH Hotels</div>
+        <div class="client-badge">Lagoon</div>
+        <div class="client-badge">Universidad Nacional</div>
+        <div class="client-badge">Umbral Propiedad Raíz</div>
+        <div class="client-badge">Asociación Casamata</div>
+        <div class="client-badge">Titularizadora Colombiana</div>
+        <div class="client-badge">Duwest Colombia</div>
+        <div class="client-badge">Grupo Argos</div>
+        <div class="client-badge">Radisson Hotels</div>
+        <div class="client-badge">Universidad Central</div>
+        <div class="client-badge">Caja de la Vivienda Popular</div>
+        <div class="client-badge">Thomas Greg & Sons</div>
+        <div class="client-badge">Protección Pensiones</div>
+        <div class="client-badge">Santa Lucía Laboratorio</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 12: CONTACTO -->
+    <div class="slide" id="slide-12">
+      <div class="slide-cover">
+        <h2 style="font-family: var(--font-serif); font-size: 3rem; color: var(--dark-plum);" class="mb-3">
+          ¡Estamos seguros de que la disfrutarán de principio a fin!
+        </h2>
+        
+        <div class="contact-card-official mt-3" style="max-width: 650px;">
+          <div class="monogram-badge" style="width:70px; height:70px; flex-shrink:0;">
+            <span class="monogram-letters" style="font-size:1.8rem;">SR</span>
+          </div>
+          <div class="official-details" style="text-align: left;">
+            <h3>Susana Rodríguez</h3>
+            <p class="role-title">Consultora de Belleza Mary Kay Colombia</p>
+            <p style="margin-top: 0.5rem; font-size: 1rem;"><i class="fa-brands fa-whatsapp text-whatsapp"></i> <strong>WhatsApp:</strong> +57 321 576 6840</p>
+            <p style="font-size: 1rem;"><i class="fa-solid fa-envelope text-rose"></i> <strong>Correo:</strong> susirodri815@gmail.com</p>
+          </div>
+        </div>
+
+        <a href="https://wa.me/573215766840?text=Hola%20Susana,%20deseo%20reservar%20la%20Propuesta%20de%20Bienestar" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large btn-glow mt-4">
+          <i class="fa-brands fa-whatsapp"></i> Reservar Fecha por WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DECK BOTTOM BAR -->
+  <div class="deck-bottom-bar">
+    <div class="slide-counter" id="slideCounter">Diapositiva 1 / 12</div>
+
+    <div class="nav-arrow-btns">
+      <button class="arrow-btn" onclick="prevSlide()" title="Anterior (Flecha Izquierda)"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="arrow-btn" onclick="nextSlide()" title="Siguiente (Flecha Derecha)"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 12;
+
+    function showSlide(index) {
+      if (index < 1) index = 1;
+      if (index > totalSlides) index = totalSlides;
+
+      currentSlide = index;
+
+      document.querySelectorAll('.slide').forEach((s, idx) => {
+        s.classList.toggle('active', idx === (currentSlide - 1));
+      });
+
+      document.getElementById('slideCounter').textContent = `Diapositiva ${currentSlide} / ${totalSlides}`;
+      
+      const progressPercent = (currentSlide / totalSlides) * 100;
+      document.getElementById('progressBar').style.width = `${progressPercent}%`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) showSlide(currentSlide - 1);
+    }
+
+    // Keyboard navigation listeners
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'Space' || e.key === 'PageDown') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevSlide();
+      }
+    });
+
+    // Navegación por deslizamiento (swipe) en móvil
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    document.addEventListener('touchstart', function (e) {
+      if (e.touches.length !== 1) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', function (e) {
+      if (e.changedTouches.length !== 1) return;
+      const deltaX = e.changedTouches[0].clientX - touchStartX;
+      const deltaY = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(deltaX) > 60 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+        if (deltaX < 0) { nextSlide(); } else { prevSlide(); }
+      }
+    }, { passive: true });
+
+    // Fullscreen toggle
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => console.log(err));
+        document.getElementById('fullScreenBtn').innerHTML = '<i class="fa-solid fa-compress"></i> <span class="deck-btn-text">Salir Pantalla Completa</span>';
+      } else {
+        document.exitFullscreen();
+        document.getElementById('fullScreenBtn').innerHTML = '<i class="fa-solid fa-expand"></i> <span class="deck-btn-text">Pantalla Completa</span>';
+      }
+    }
+
+    // Initialize progress bar
+    showSlide(1);
+  </script>
+</body>
+</html>
